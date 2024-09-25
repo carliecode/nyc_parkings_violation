@@ -1,0 +1,13 @@
+nyc_parkings_violation_project:
+  target: dev
+  outputs:
+    dev:
+      type: sqlserver
+      driver: 'ODBC Driver 18 for SQL Server' # (The ODBC Driver installed on your system)
+      database: nyc_parkings_violations_dwh
+      host: localhost
+      schema: source
+      user: sa
+      password: Businessweek$123
+      encrypt: False
+      sslmode: disable
