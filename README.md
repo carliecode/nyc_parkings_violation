@@ -19,12 +19,17 @@ The dataset used in this project is the NYC Parking Violations Dataset, which co
 This project adopts the Medallion Architecture, a modular and scalable data warehousing framework. The architecture consists of:
 
 
-- Source: Raw NYC parking violation data
-- Staging: Standardized and cleaned data
-- Marts: Transformated data for analysis
-    - Parking Violations Mart: Analytical tables for parking violations
-    - Vehicle Mart: Analytical tables for vehicle information
-    - Location Mart: Analytical tables for location information
+- Bronze: Raw NYC parking violation data
+    - Parking Violation Codes
+    - Parking Violations
+- Silver: Standardized and cleaned data
+    - Parking Violations
+    - Violation Tickets
+    - Violation Vehicles
+- Gold: Transformated data for analysis
+    - Ticket Metrics
+    - Vehicle Metrics
+
 
 
 **DBT Models**
@@ -33,11 +38,12 @@ This project adopts the Medallion Architecture, a modular and scalable data ware
 This project utilizes DBT to manage the data transformation process. The models are organized into:
 
 
-- Staging: stg_nyc_parking_violations.sql
-- Marts:
-    - marts/parking_violations.sql
-    - marts/vehicles.sql
-    - marts/locations.sql
+- Bronze: 
+    - bronze_parking_violations.sql
+    - bronze_parking_violation_codes.sql
+- Gold:
+    - gold/gold_ticket_metrics.sql
+    - gold/gold_vehicle_metrics.sql
 
 
 **Installation**
